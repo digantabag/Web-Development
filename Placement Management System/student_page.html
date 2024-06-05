@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add your custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dashboard-container {
+            margin-top: 50px;
+        }
+
+        .menu-container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .job-list,
+        .applied-jobs {
+            margin-top: 20px;
+        }
+
+        .job-item,
+        .applied-job-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .job-item button {
+            margin-left: 10px;
+        }
+
+        .student-details-button {
+            margin-top: 20px; /* Add margin to the top */
+        }
+
+        .arrow-down {
+            cursor: pointer;
+        }
+
+        .arrow-down::after {
+            content: '\25BC';
+            display: inline-block;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 dashboard-container">
+                <div class="menu-container">
+                    <div class="arrow-down" onclick="toggleJobsMenu('availableJobs')">Available Jobs</div>
+                    <div class="job-list" id="availableJobs" style="display: none;">
+                        <div class="job-item">
+                            <span>Job 1</span>
+                            <button class="btn btn-sm btn-primary">Apply</button>
+                            <span>Last Date: 18.01.2024</span>
+                        </div>
+                        <div class="job-item">
+                            <span>Job 2</span>
+                            <button class="btn btn-sm btn-primary">Apply</button>
+                            <span>Last Date: 18.01.2024</span>
+                        </div>
+                        <!-- Add more job items as needed -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 dashboard-container">
+                <div class="menu-container">
+                    <div class="arrow-down" onclick="toggleJobsMenu('appliedJobs')">Already Applied Jobs</div>
+                    <div class="applied-jobs" id="appliedJobs" style="display: none;">
+                        <div class="applied-job-item">
+                            <span>Job 1</span>
+                            <span class="badge badge-success">Approved</span>
+                        </div>
+                        <div class="applied-job-item">
+                            <span>Job 2</span>
+                            <span class="badge badge-danger">Denied</span>
+                        </div>
+                        <div class="applied-job-item">
+                            <span>Job 3</span>
+                            <span class="badge badge-warning">Not reviewed yet</span>
+                        </div>
+                        <!-- Add more applied job items as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <button class="btn btn-primary student-details-button" onclick="window.open('student_details.html', '_blank')">Student Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and your custom JavaScript if needed -->
+    <script>
+        function toggleJobsMenu(menuId) {
+            const menu = document.getElementById(menuId);
+            menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

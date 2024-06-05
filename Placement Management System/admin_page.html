@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add your custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dashboard-container {
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .plus-sign {
+            color: green;
+            font-size: 1.5em;
+            margin-left: 5px;
+        }
+
+        .arrow-down::after {
+            content: '\25BC';
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .job-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .job-item button {
+            margin-left: 10px;
+        }
+
+        .admin-details-button {
+            margin-top: 20px;
+        }
+
+        .post-job-button h4 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .post-job-button button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid dashboard-container">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
+                <div class="card post-job-button">
+                    <h4>
+                        <span>Post New Job</span>
+                        <button class="btn btn-success">+</button>
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
+                <div class="card">
+                    <h4>Edit Jobs <span class="arrow-down" onclick="toggleJobList('editJobs')"></span></h4>
+                    <div class="job-list" id="editJobs" style="display: none;">
+                        <div class="job-item">Job 1<button class="btn btn-primary ml-auto">Edit</button></div>
+                        <div class="job-item">Job 2<button class="btn btn-primary ml-auto">Edit</button></div>
+                        <!-- Add more job items as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
+                <div class="card">
+                    <h4>Students Applications <span class="arrow-down" onclick="toggleJobList('studentApplications')"></span></h4>
+                    <div class="job-list" id="studentApplications" style="display: none;">
+                        <div class="job-item">Job 1<button class="btn btn-info ml-auto">See Applications</button></div>
+                        <div class="job-item">Job 2<button class="btn btn-info ml-auto">See Applications</button></div>
+                        <!-- Add more job items as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center "Admin Details" button under the "Students Applications" card -->
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <button class="btn btn-primary admin-details-button" onclick="window.open('admin_details.html', '_blank')">Admin Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and your custom JavaScript if needed -->
+    <script>
+        function toggleJobList(jobListId) {
+            const jobList = document.getElementById(jobListId);
+            jobList.style.display = jobList.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

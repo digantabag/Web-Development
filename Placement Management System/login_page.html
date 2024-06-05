@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add your custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-card {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6">
+                <div class="card login-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Admin Login</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="adminUsername">Username</label>
+                                <input type="text" class="form-control" id="adminUsername" placeholder="Enter username" />
+                            </div>
+                            <div class="form-group">
+                                <label for="adminPassword">Password</label>
+                                <input type="password" class="form-control" id="adminPassword" placeholder="Enter password" />
+                            </div>
+                            <button type="submit" class="btn btn-primary" onclick="window.open('admin_page.html', '_blank')">Login</button>
+                            <a href="#">Forgot Password?</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card login-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Student Login</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="studentUsername">Username</label>
+                                <input type="text" class="form-control" id="studentUsername" placeholder="Enter username" />
+                            </div>
+                            <div class="form-group">
+                                <label for="studentPassword">Password</label>
+                                <input type="password" class="form-control" id="studentPassword" placeholder="Enter password" />
+                            </div>
+                            <button type="submit" class="btn btn-primary" onclick="window.open('student_page.html', '_blank')">Login</button>
+                            <a href="#">Forgot Password?</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and React JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+</body>
+</html>
